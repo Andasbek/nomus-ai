@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nomus AI — достоинство труда, подтверждённое законом</title>
+<meta name="description" content="Информационно-справочный сервис по трудовым правам иностранных работников в Казахстане. Ответы со ссылками на конкретные статьи законов РК.">
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <div class="logo-mark">⚖️</div>
+      <div>Nomus AI<small>достоинство труда</small></div>
+    </div>
+    <a class="btn btn-tg" id="tg-header" href="#" target="_blank" rel="noopener">
+      Открыть в Telegram
+    </a>
+  </div>
+</header>
+
+<main>
+
+<div class="wrap hero">
+  <h1>Ваши трудовые права —<br>со ссылкой на статью закона</h1>
+  <p class="lead">
+    Информационно-справочный сервис для иностранных работников в Казахстане.
+    Отвечаем только на основании действующих законов РК и показываем, какая
+    именно статья это подтверждает.
+  </p>
+  <p class="gloss">Nomus — dignity (узб., тадж.; каз. «намыс»)</p>
+
+  <div class="hero-actions">
+    <a class="btn btn-tg" id="tg-hero" href="#" target="_blank" rel="noopener">Написать боту в Telegram</a>
+    <a class="btn btn-ghost" href="#demo">Попробовать здесь</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>1817</b><span>статей и пунктов НПА в базе</span></div>
+    <div class="stat"><b>0</b><span>выдуманных статей: цитаты проверяются</span></div>
+    <div class="stat"><b>24/7</b><span>горячая линия 116 16 при принуждении</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>Почему не обычный чат-бот</h2>
+    <p class="sub">
+      Исследование Stanford показало 58–88% галлюцинаций у больших языковых моделей
+      в юридических запросах. Для мигранта цена выдуманной статьи — потеря денег
+      или депортация. Мы построили систему так, чтобы выдумывать было невозможно.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <span class="ico">📎</span>
+        <h3>Ответ только из закона</h3>
+        <p>Модель видит лишь найденные фрагменты НПА и не имеет права добавлять
+           знания «из головы».</p>
+      </div>
+      <div class="card">
+        <span class="ico">✅</span>
+        <h3>Проверка каждой цитаты</h3>
+        <p>Если названной статьи нет в найденном тексте закона, ответ блокируется
+           и не доходит до вас.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🤷</span>
+        <h3>Честный отказ</h3>
+        <p>Не нашли норму — так и говорим и даём контакты живых юристов, вместо
+           правдоподобной выдумки.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🛡️</span>
+        <h3>Безопасный совет</h3>
+        <p>Если документы не в порядке, сначала предлагаем НПО и консульство и
+           предупреждаем о рисках обращения в госорганы.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🚨</span>
+        <h3>Признаки принуждения</h3>
+        <p>Изъятие паспорта, долговая кабала, запрет уходить — сразу выдаём
+           телефон горячей линии 116 16.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🌍</span>
+        <h3>Учёт гражданства</h3>
+        <p>Для граждан ЕАЭС и остальных стран действуют разные правила — ответы
+           отличаются по существу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="demo">
+  <div class="wrap">
+    <h2>Попробуйте прямо здесь</h2>
+    <p class="sub">
+      Опишите ситуацию своими словами. Укажите гражданство и наличие документов —
+      от этого зависят и правовая норма, и безопасность совета.
+    </p>
+
+    <div class="demo-grid">
+      <div class="panel">
+        <h3>Ваш профиль</h3>
+        <p class="hint">Нужен, чтобы подобрать верную норму</p>
+
+        <div class="field">
+          <label for="citizenship">Гражданство</label>
+          <select id="citizenship">
+            <option value="NON_EAEU">Узбекистан</option>
+            <option value="NON_EAEU">Таджикистан</option>
+            <option value="EAEU">Кыргызстан</option>
+            <option value="EAEU">Россия</option>
+            <option value="EAEU">Армения</option>
+            <option value="EAEU">Беларусь</option>
+            <option value="NON_EAEU">Другая страна</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="risk">Документы</label>
+          <select id="risk">
+            <option value="DOCUMENTED">Есть договор и регистрация</option>
+            <option value="UNDOCUMENTED">Нет договора или регистрации</option>
+            <option value="UNKNOWN">Не знаю / затрудняюсь</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="question">Ваша ситуация</label>
+          <textarea id="question" maxlength="1000"
+            placeholder="Например: не платят зарплату третий месяц, договора нет"></textarea>
+        </div>
+
+        <button class="btn btn-primary" id="ask-btn" style="width:100%; justify-content:center">
+          Узнать свои права
+        </button>
+      </div>
+
+      <div>
+        <div class="examples">
+          <button class="chip" data-q="Мне не платят зарплату 3 месяца, паспорт забрал работодатель">Не платят + забрали паспорт</button>
+          <button class="chip" data-q="Нужно ли мне разрешение на работу в Казахстане?">Нужно ли разрешение на работу</button>
+          <button class="chip" data-q="Хотят уволить без объяснения причин, что делать?">Увольняют без причины</button>
+          <button class="chip" data-q="Работаю без трудового договора, чем это грозит?">Работа без договора</button>
+        </div>
+
+        <div class="chat" id="chat">
+          <div class="placeholder">
+            <span class="big">⚖️</span>
+            Опишите ситуацию слева — покажу, что говорит закон,<br>
+            и на какую статью можно сослаться.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap">
+    <h2>Живая помощь</h2>
+    <p class="sub">Бот не заменяет юриста. Если дело срочное — звоните.</p>
+    <div class="contact-list" id="contact-list"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <h2>Удобнее в мессенджере?</h2>
+      <p>Тот же сервис в Telegram: запомнит ваш профиль, поможет собрать заявление
+         в госинспекцию труда и пришлёт готовый файл.</p>
+      <a class="btn btn-tg" id="tg-cta" href="#" target="_blank" rel="noopener">Открыть Nomus AI в Telegram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer" id="disclaimer">
+      ℹ️ Это информационно-справочный сервис. Вы общаетесь с искусственным интеллектом.
+      Мы предоставляем правовую информацию со ссылками на законы РК, но
+      <b>не оказываем юридическую консультацию</b> и не заменяем адвоката.
+      Для решения вашего дела обратитесь к юристу или в организацию помощи мигрантам.
+    </div>
+    <div class="footer-links">
+      <a id="tg-footer" href="#" target="_blank" rel="noopener">Telegram-бот</a>
+      <a href="https://adilet.zan.kz" target="_blank" rel="noopener">Источник НПА: adilet.zan.kz</a>
+      <a href="/docs">API</a>
+    </div>
+    <p style="margin-top:14px">
+      Мы не сохраняем текст ваших обращений и персональные данные.
+      Переписка в интернете не даёт абсолютной анонимности.
+    </p>
+  </div>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

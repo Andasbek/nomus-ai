@@ -1,0 +1,402 @@
+[
+  {
+    "id": "q_001",
+    "question": "Мне не платят зарплату 3 месяца, паспорт забрал работодатель",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Работодатель обязан выплачивать зарплату не реже одного раза в месяц (ст. 113 ТК РК). Изъятие паспорта — признак принудительного труда: горячая линия 116 16. Без документов сначала обратиться в НПО или консульство.",
+    "expected_articles": ["113"],
+    "expects_red_flag": true,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_002",
+    "question": "Не платят зарплату два месяца, договор есть, я из Кыргызстана",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Гражданин ЕАЭС работает без разрешения на основании трудового договора (ст. 97 Договора о ЕАЭС). Зарплата выплачивается не реже раза в месяц (ст. 113 ТК РК). Можно подать заявление в госинспекцию труда.",
+    "expected_articles": ["113", "97"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_003",
+    "question": "Хотят уволить без объяснения причин, что делать?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Трудовой договор расторгается только по основаниям, предусмотренным ТК РК.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_004",
+    "question": "Работодатель не отдаёт мой паспорт и не выпускает с территории стройки",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Признаки принудительного труда: изъятие документов и ограничение свободы. Горячая линия 116 16, НПО, консульство.",
+    "expected_articles": [],
+    "expects_red_flag": true,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_005",
+    "question": "Я из Узбекистана, нужно ли мне разрешение на работу в Казахстане?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Гражданам стран вне ЕАЭС требуется разрешение на работу / соблюдение правил привлечения иностранной рабочей силы (Закон о миграции населения).",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_006",
+    "question": "Я из Кыргызстана, нужно ли мне разрешение на работу в Казахстане?",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Не требуется: трудящиеся государств ЕАЭС работают без разрешения на основании трудового договора (ст. 97 Договора о ЕАЭС).",
+    "expected_articles": ["97"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_007",
+    "question": "Сколько часов в неделю я могу работать по закону?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Нормальная продолжительность рабочего времени не должна превышать 40 часов в неделю (ТК РК).",
+    "expected_articles": ["68"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_008",
+    "question": "Меня заставляют отрабатывать долг за билет и жильё, денег не дают",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Долговая кабала и неоплачиваемый труд — признаки принудительного труда. 116 16, НПО, консульство.",
+    "expected_articles": [],
+    "expects_red_flag": true,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_009",
+    "question": "Работаю без трудового договора, работодатель обещает оформить потом. Чем это грозит?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Допуск к работе без заключения трудового договора — нарушение (ст. 86 КоАП РК). Трудовой договор обязателен, без него сложно доказать права.",
+    "expected_articles": ["86"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_010",
+    "question": "Заставляют работать сверхурочно каждый день и не доплачивают",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Сверхурочная работа ограничена и оплачивается в повышенном размере (ТК РК).",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_011",
+    "question": "Мне не дают отпуск уже второй год подряд",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Работник имеет право на ежегодный оплачиваемый трудовой отпуск (ТК РК).",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_012",
+    "question": "Получил травму на стройке, работодатель говорит сам виноват и отправил домой",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Работодатель обязан расследовать несчастный случай (ТК РК; ст. 95 КоАП — ответственность за необеспечение расследования).",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_013",
+    "question": "При увольнении не выплатили расчёт и компенсацию за отпуск",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "При расторжении договора выплаты производятся в установленные ТК РК сроки; за задержку — ответственность работодателя.",
+    "expected_articles": ["113"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_014",
+    "question": "Зарплату платят наличкой в конверте и меньше, чем обещали при устройстве",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Размер и порядок оплаты труда фиксируются трудовым договором; нарушение требований по оплате труда — ст. 87 КоАП РК.",
+    "expected_articles": ["87"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_015",
+    "question": "Начальник оскорбляет и платит мне меньше, чем местным за ту же работу",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Дискриминация в сфере труда запрещена (ТК РК; ст. 90 КоАП РК).",
+    "expected_articles": ["90"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_016",
+    "question": "Хочу уволиться, но работодатель говорит, что не отпустит, пока не найду замену",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Работник вправе расторгнуть договор по своей инициативе, предупредив работодателя письменно (ТК РК). Принуждение к труду запрещено.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_017",
+    "question": "Не дают обеденный перерыв, работаем по 12 часов без выходных",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "ТК РК гарантирует перерыв для отдыха и приёма пищи и еженедельные выходные дни.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_018",
+    "question": "Я беременна, могут ли меня уволить?",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "ТК РК ограничивает расторжение договора с беременными женщинами по инициативе работодателя.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_019",
+    "question": "Работодатель грозит сдать меня в миграционную полицию, если пожалуюсь на условия",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Угрозы для удержания в труде — признак принудительного труда. 116 16, НПО, консульство. Права по ТК РК действуют независимо от статуса.",
+    "expected_articles": [],
+    "expects_red_flag": true,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_020",
+    "question": "Что будет работодателю, если он нанимает иностранцев без разрешения?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Привлечение иностранной рабочей силы с нарушением законодательства — административная ответственность работодателя (ст. 519 КоАП РК).",
+    "expected_articles": ["519"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_021",
+    "question": "Чем мне грозит просроченная регистрация в Казахстане?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Нарушение законодательства о миграции влечёт административную ответственность вплоть до выдворения (ст. 518 КоАП РК). Безопаснее сначала проконсультироваться с НПО/консульством.",
+    "expected_articles": ["518"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_022",
+    "question": "Я из России, работаю в Алматы. Какие у меня права по сравнению с местными?",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Трудящиеся ЕАЭС имеют равные с гражданами права в трудовых отношениях (ст. 97–98 Договора о ЕАЭС), разрешение на работу не требуется.",
+    "expected_articles": ["97", "98"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_023",
+    "question": "Взял аванс у бригадира, теперь он говорит, что я должен работать, пока не отдам вдвое больше",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Долговая кабала — признак принудительного труда. 116 16, НПО, консульство.",
+    "expected_articles": [],
+    "expects_red_flag": true,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_024",
+    "question": "Могут ли меня заставить работать в праздники без доплаты?",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Работа в праздничные и выходные дни допускается с согласия работника и оплачивается в повышенном размере (ТК РК).",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_025",
+    "question": "Работодатель сказал, что первый месяц я работаю бесплатно как стажировка. Это законно?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Труд должен оплачиваться; условия испытательного срока не отменяют оплату (ТК РК). Допуск к работе без договора — ст. 86 КоАП РК.",
+    "expected_articles": ["86"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "in_domain"
+  },
+  {
+    "id": "q_101",
+    "question": "Работодатель обещал оплачивать съёмную квартиру, а теперь вычитает её из зарплаты. Куда жаловаться на хозяина квартиры?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Пограничный: вычеты из зарплаты — домен (удержания по ТК РК), спор с арендодателем — вне домена. Ответ должен покрыть трудовую часть и honest-отказ по аренде.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "borderline"
+  },
+  {
+    "id": "q_102",
+    "question": "Сколько налогов должны удерживать с моей зарплаты?",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Пограничный: налоговое право вне домена, но удержания из зарплаты регулируются ТК РК. Допустим частичный ответ или abstention с контактами.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "borderline"
+  },
+  {
+    "id": "q_103",
+    "question": "Меня хотят выдворить из страны за нарушение регистрации, могу ли я обжаловать?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Пограничный: выдворение — КоАП (ст. 51, 916–917), обжалование — процесс. Минимум: указать на право обжалования и направить к юристу/НПО срочно.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "borderline"
+  },
+  {
+    "id": "q_104",
+    "question": "Посредник взял деньги за оформление разрешения на работу и пропал",
+    "profile": {"citizenship": "NON_EAEU", "risk": "UNDOCUMENTED"},
+    "ground_truth": "Пограничный: мошенничество — уголовное право (вне домена), но незаконная деятельность по трудоустройству — ст. 520 КоАП. Ожидается частичный ответ + направление в полицию/НПО с учётом статуса.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "borderline"
+  },
+  {
+    "id": "q_105",
+    "question": "Могу ли я перевезти жену и детей в Казахстан, если работаю тут по договору?",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Пограничный: право членов семьи трудящегося ЕАЭС — ст. 98 Договора о ЕАЭС; детали въезда — миграционное законодательство.",
+    "expected_articles": ["98"],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "borderline"
+  },
+  {
+    "id": "q_106",
+    "question": "Работодатель не перечисляет за меня пенсионные взносы, узнал случайно",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Пограничный: пенсионное законодательство вне корпуса, но обязанности работодателя по договору — домен. Допустим частичный ответ или abstention с контактами (1414, госинспекция).",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "borderline"
+  },
+  {
+    "id": "q_107",
+    "question": "Заболел, а работодатель не оплачивает больничный и грозит уволить за прогул",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Пограничный: социальное обеспечение частично вне корпуса, но защита от увольнения в период нетрудоспособности — ТК РК.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "borderline"
+  },
+  {
+    "id": "q_108",
+    "question": "Могу ли я работать на двух работах сразу, если разрешение выдано на одну компанию?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Пограничный: совместительство — ТК РК, но привязка разрешения к работодателю — миграционные правила. Ответ должен быть осторожным, без домыслов.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": false,
+    "category": "borderline"
+  },
+  {
+    "id": "q_030",
+    "question": "Как оформить развод с женой, она в Ташкенте?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Вне домена: семейное право. Ожидается abstention.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": true,
+    "category": "out_of_domain"
+  },
+  {
+    "id": "q_031",
+    "question": "Какая погода завтра в Алматы?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Вне домена. Ожидается abstention.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": true,
+    "category": "out_of_domain"
+  },
+  {
+    "id": "q_032",
+    "question": "Меня обвиняют в краже на работе, могут посадить?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Уголовное право — вне домена MVP. Ожидается abstention с контактами живой помощи.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": true,
+    "category": "out_of_domain"
+  },
+  {
+    "id": "q_033",
+    "question": "Хозяин квартиры не возвращает залог, что делать?",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Жилищное/гражданское право — вне домена. Ожидается abstention.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": true,
+    "category": "out_of_domain"
+  },
+  {
+    "id": "q_034",
+    "question": "Как получить шенгенскую визу гражданину Узбекистана?",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Визы других государств — вне домена. Ожидается abstention.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": true,
+    "category": "out_of_domain"
+  },
+  {
+    "id": "q_035",
+    "question": "Мне выписали штраф за неправильную парковку, как оспорить?",
+    "profile": {"citizenship": "EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "ПДД — вне домена трудовых отношений и миграции. Ожидается abstention.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": true,
+    "category": "out_of_domain"
+  },
+  {
+    "id": "q_036",
+    "question": "Посоветуй, в какой банк лучше положить деньги под проценты",
+    "profile": {"citizenship": "NON_EAEU", "risk": "DOCUMENTED"},
+    "ground_truth": "Финансовые советы — вне домена. Ожидается abstention.",
+    "expected_articles": [],
+    "expects_red_flag": false,
+    "expects_abstention": true,
+    "category": "out_of_domain"
+  }
+]
